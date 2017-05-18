@@ -65,6 +65,7 @@ RUN mkdir /tmp/sessions && \
     chmod -R ug+rwx /var/lib/nginx && \
     chmod -R ug+rwx /opt/app-root && \
     chmod +x /opt/app-root/services.sh
+	chmod +x assemble run save-artifacts usage
 
 USER 1001
 
