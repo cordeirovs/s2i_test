@@ -31,7 +31,11 @@ RUN yum install -y --setopt=tsflags=nodocs --enablerepo=centosplus \
     php70u-pdo \
     php70u-pdo \
     php70u-xml
-RUN rpm -V nginx php70w-cli php70w-fpm php70w-opcache
+RUN rpm -V nginx
+RUN rpm -V php70w-cli
+RUN rpm -V php70w-fpm
+RUN rpm -V php70w-opcache
+
 RUN yum clean all -y
 
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH
