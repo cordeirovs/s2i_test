@@ -22,6 +22,7 @@ RUN rm setup-ius.sh
 RUN yum install -y --setopt=tsflags=nodocs --enablerepo=centosplus \
     php70u-fpm-nginx \
     php70u-cli \
+    php70u-fpm \
     php70u-gd \
     php70u-imap \
     php70u-json \
@@ -32,10 +33,8 @@ RUN yum install -y --setopt=tsflags=nodocs --enablerepo=centosplus \
     php70u-pdo \
     php70u-xml
 RUN rpm -V nginx
-RUN rpm -V php70w-cli
-RUN rpm -V php70w-fpm
-RUN rpm -V php70w-opcache
-
+RUN rpm -V php70u-fpm
+RUN rpm -V php70u-cli php70u-fpm php70u-opcache
 RUN yum clean all -y
 
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH
